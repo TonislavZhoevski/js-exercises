@@ -1,15 +1,11 @@
-const numbers = [12, 5, 8, 20, 3, 17];
+const age = 16;
 
-function findSmallest(numbers) {
-  let smallestNum = numbers[0];
-
-  for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] < smallestNum) {
-      smallestNum = numbers[i];
-    }
-  }
-  return smallestNum;
+if (age >= 18) {
+  console.log("Възрастен");
+} else if (age >= 13) {
+  console.log("Пубертет");
+} else if (age >= 14) {
+  console.log("Тийнейджър");
+} else {
+  console.log("Дете");
 }
-
-const answer = findSmallest(numbers);
-console.log(answer);
