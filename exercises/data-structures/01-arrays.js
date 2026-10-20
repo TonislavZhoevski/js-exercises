@@ -1,26 +1,36 @@
 function analyzeNumbers(numbers) {
-  let total = 0;
-  let evenCount = 0;
+  let total = 0; /* Натрупва резултата: четните числа се прибавят,
+  а нечетните се изваждат. */
+
+  let evenCount = 0; /* Брои колко четни числа сме срещнали. Това е отделна променлива, защото броят и сумата отговарят на два различни въпроса */
 
   for (let i = 0; i < numbers.length; i++) {
-    let number = numbers[i];
+    /* i започва от 0. На всяка итерация проверяваме следващия индекс. Цикълът продължава, докато i < numbers.length. i++ увеличава i с 1 след всяка итерация. */
+
+    let number = numbers[1];
+    /* Взимаме числото на текущия индекс и го записваме в number. Например при i = 0: number = numbers[0] = 3. */
 
     if (number % 2 === 0) {
+      /* %  изчислява остатъка от делението на 2. Ако остатъкът е 0, числото е четно. */
+
       total += number;
+      /* Също като: total = total + number. Променяме натрупания резултат, като прибавяме числото. */
+
       evenCount++;
+      /* Същото като: evenCount = evenCount + 1. Увеличава брояча само при четно число. */
     } else {
+      /* Ако числото не е четно, изпълняваме този блок. */
+
       total -= number;
+      /* Същото като total = total - number. Нечетното число се изважда от натрушания резултат. evenCount не се промен. */
     }
   }
 
   return [total, evenCount];
+  /* Връща масив с две стоности в точно този ред: индекс 0 -> крайният total, индекс 1  -> крайният evenCount */
 }
 
 const result = analyzeNumbers([3, 4, 7, 2, 6]);
 
-console.log(result[0]);
-console.log(result[1]);
-console.log(result[2]);
-console.log(result[3]);
-console.log(result[4]);
-console.log(result[5]);
+console.log(result[0]); /* Извежда 2 - крайния резултат. */
+console.log(result[1]); /* Извежда 3 - броя на четните числа. */
