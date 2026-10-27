@@ -1,21 +1,27 @@
-function analyzeNumbers(numbers) {
-  let oddNumber = 0;
-  let evenCount = 0;
+function analizeNumbers(numbers) {
+  let evenTotal = 0;
+  let oddTotal = 0;
+  let greaterThanFiveCount = 0;
 
   for (let i = 0; i < numbers.length; i++) {
     let number = numbers[i];
 
     if (number % 2 === 0) {
-      evenCount++;
+      evenTotal += number;
     } else {
-      oddNumber += number;
+      oddTotal += number;
+    }
+
+    if (number > 5) {
+      greaterThanFiveCount++;
     }
   }
 
-  return [oddNumber, evenCount];
+  return [evenTotal, oddTotal, greaterThanFiveCount];
 }
 
-let result = analyzeNumbers([5, 2, 8, 3, 6, 7]);
+const result = analizeNumbers([4, 7, 2, 9, 6, 3, 10]);
 
 console.log(result[0]);
 console.log(result[1]);
+console.log(result[2]);
