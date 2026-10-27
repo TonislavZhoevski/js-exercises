@@ -1,33 +1,25 @@
-function analyzeNumbers(numbers) {
-  let evenTotal = 0;
-  let oddTotal = 0;
-  let sixOrMoreCount = 0;
-  let belowFiveCount = 0;
+function classifyNumbers(numbers) {
+  let largeCount = 0;
+  let mediumCount = 0;
+  let smallCount = 0;
 
   for (let i = 0; i < numbers.length; i++) {
     let number = numbers[i];
 
-    if (number % 2 === 0) {
-      evenTotal += number;
-    } else {
-      oddTotal += number;
-    }
-
-    if (number >= 6) {
-      sixOrMoreCount++;
-    }
-
-    if (number < 5) {
-      belowFiveCount++;
+    if (number >= 10) {
+      largeCount++;
+    } else if (number < 10 && number >= 5) {
+      mediumCount++;
+    } else if (number < 5) {
+      smallCount++;
     }
   }
 
-  return [evenTotal, oddTotal, sixOrMoreCount, belowFiveCount];
+  return [largeCount, mediumCount, smallCount];
 }
 
-const result = analyzeNumbers([4, 7, 2, 9, 6, 3, 10, 5]);
+const result = classifyNumbers([2, 5, 9, 10, 14, 4, 7]);
 
 console.log(result[0]);
 console.log(result[1]);
 console.log(result[2]);
-console.log(result[3]);
