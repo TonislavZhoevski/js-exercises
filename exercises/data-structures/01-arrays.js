@@ -1,21 +1,21 @@
 function classifyNumbers(numbers) {
-  let largeCount = 0;
-  let mediumCount = 0;
-  let smallCount = 0;
+  let largeNumbers = [];
+  let mediumNumbers = [];
+  let smallNumbers = [];
 
   for (let i = 0; i < numbers.length; i++) {
     let number = numbers[i];
 
     if (number >= 10) {
-      largeCount++;
+      largeNumbers.push(number);
     } else if (number < 10 && number >= 5) {
-      mediumCount++;
-    } else if (number < 5) {
-      smallCount++;
+      mediumNumbers.push(number);
+    } else {
+      smallNumbers.push(number);
     }
   }
 
-  return [largeCount, mediumCount, smallCount];
+  return [largeNumbers, mediumNumbers, smallNumbers];
 }
 
 const result = classifyNumbers([2, 5, 9, 10, 14, 4, 7]);
