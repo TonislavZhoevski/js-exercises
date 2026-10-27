@@ -1,20 +1,21 @@
 function analyzeNumbers(numbers) {
-  let evenTotal = 0;
+  let oddNumber = 0;
   let evenCount = 0;
 
   for (let i = 0; i < numbers.length; i++) {
     let number = numbers[i];
 
     if (number % 2 === 0) {
-      evenTotal += number;
       evenCount++;
+    } else {
+      oddNumber += number;
     }
   }
 
-  return [evenTotal, evenCount];
+  return [oddNumber, evenCount];
 }
 
-const result = analyzeNumbers([4, 7, 2, 9, 6, 3]);
+let result = analyzeNumbers([5, 2, 8, 3, 6, 7]);
 
 console.log(result[0]);
 console.log(result[1]);
